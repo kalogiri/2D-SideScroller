@@ -80,6 +80,9 @@ void bullet::display() {
 void bullet::updateBulletItem() {
 	itemPos += itemVel;
 	theta += rotateSpeed;
+	if(totalBullets <= 0) {
+		totalBullets = 0;
+	}
 }
 //Display the Total bullets string when the story mode is true
 void bullet::displayString() {
@@ -104,6 +107,9 @@ void bullet::displayBulletItem() {
 	ofPopMatrix();
 }
 
+void bullet::reset() {
+	totalBullets = 0;
+}
 int bullet::getTotalBullets() { return totalBullets; }
 
 bullet::~bullet(void){

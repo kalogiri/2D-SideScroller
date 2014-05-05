@@ -516,10 +516,13 @@ void testApp::draw(){
 		eneThree.clear();
 		particle.clear();
 		bullets.clear();
+		bulletItems.clear();
 		ti.clear();
 		c.reset();
 		t.reset();
+		b.reset();
 		_boss.reset();
+		spawnBulletItem = false;
 		gameWait = true;
 		gameWin = false;
 		gameStart = false;

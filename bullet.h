@@ -14,6 +14,7 @@ public:
 	void collisionDetectWithPlayer(ofVec2f, int, int);
 	bool returnCollidedWithPlayer();
 	bool returnCollided();
+	void reset();
 	//Getter functions for the bullet
 	void setBulletYPos(int);
 	void setBulletXPos(int);

@@ -127,6 +127,8 @@ void testApp::bulletUpdate(){
     bullets.push_back(bullet());
     bullets[bullets.size()-1].setBulletXPos(c.returnBulletXps());
     bullets[bullets.size()-1].setBulletYPos(c.returnBulletYps());
+	b.totalBullets--;
+
 }//endBulletUpdate
 
 //--------------------------------------------------------------
@@ -149,6 +151,7 @@ void testApp::bulletItemUpdate() {
 			bulletItems.push_back(bullet());
 		}//endFor
 		bulletItemDraw();
+		
 	}//endIf
 }//endBulletItemUpdate
 
@@ -687,15 +690,20 @@ void testApp::mousePressed(int x, int y, int button){
 			}//end if exit button detection
 		}//endGameWin
 
+		if(bossStage == true) {
+			allowShoot = true;
+		}
 		//Here this allows the player to shoot if the number of bullets is greater than 0
-		if(bullets.size() >= b.getTotalBullets()) {
+		if(b.getTotalBullets() <= 0) {
 			allowShoot = false;
 		}//endIf
 
-		if(allowShoot == true && bossStage == true) {
+		if(allowShoot == true) {
 			shoot.play();
 			bulletUpdate();
 		}
+
+		
 
 		
     }//end if left mouseButton
